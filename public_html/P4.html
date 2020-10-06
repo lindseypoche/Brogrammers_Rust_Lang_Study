@@ -1,69 +1,182 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>CMPS401 PHP Quiz</title>
-<center><h><b>CMPS401 PHP Quiz</b></h></center>
-
+	<title>CMPS401 PHP Quiz</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+		body{
+			font-family:"Open Sans";
+			background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png');
+		}
+		.content{
+			width:60%;
+			margin:auto;
+		}
+		
+		.quiz{
+			background-color:white;
+			box-shadow:1px 1px 4px #333;
+			border-radius:.1em;
+			width:100%;
+			padding:2em;
+		}
+		
+		.header{
+			text-align:center;
+			font-size:1.2em;
+		}
+		
+		.input-group{
+		}
+		
+		label{
+			font-size:.8em;
+			color:#AAA;
+		}
+		
+		.input-group > div{
+			padding-right:1em;
+			display:inline-block;
+		};
+		
+		.question > .prompt {
+			display:block;
+		}
+		
+		.question > .answers {
+			width:100%;
+		}
+		
+		.submit{
+				display:block;
+				margin:auto;
+				margin-top:2em;
+				padding:1em;
+				color:white;
+				border:0px;
+				cursor:pointer;
+				background-color:#2A9F4B;
+				border-radius:0px;
+				width:10em;
+		}
+		
+	</style>
 </head>
 <body>
-    <form action = "P4.php" method= "get">
-        First Name: <input type ="text" name = "fname"<br>
-        Last Name: <input type ="text" name = "lname"<br>
-        <hr>
-        <p>1. What does PHP Stand for?<br></p>
-        <input type="radio" name ="q1" value="a">a) PHP: Hypertext Preprocessor
-        <input type="radio" name ="q1" value="b">b) Personal Hypertext Processor
-        <input type="radio" name ="q1" value="c">c) Private Home Page
-        <input type="radio" name ="q1" value="d">d) Personal Home Page
+	<div class="content">
+		<div class="header">
+			<h1>CMPS 401 Quiz</h1>
+		</div>
+		<div class="quiz">
+			<form method="post" action="P4.php">
+				<h3>Full Name</h3>
+				<div class="input-group">
+					<div>
+						<input type="text" id="fname" name="fname" required placeholder="Ivan"/><br/>
+						<label for="fname"/>First Name</label>
+					</div>
+					<div>
+						<input type="text" id="lname" name="lname" required placeholder="Ilyich"/><br/>
+						<label for="lname"/>Last Name</label>
+					</div>
+				</div>
+				<hr/>
+				<ol>
+					<!--1-->
+					<li class="question">
+						<h3 class="prompt">What does PHP stand for?</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q1" value="a"/> a) PHP: Hypertext Preprocessor</div>
+							<div class="answer"><input type="radio" name="q1" value="b"/> b) Personal Hypertext Processor</div>
+							<div class="answer"><input type="radio" name="q1" value="c"/> c) Private Home Page</div>
+							<div class="answer"><input type="radio" name="q1" value="d"/> d) Personal Home Page</div>
+						</div>
+					</li>
+					<!--2-->
+					<li class="question">
+						<h3 class="prompt">How do you write "Hello World" in PHP?</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q2" value="a"/> a) "Hello World";</div>
+							<div class="answer"><input type="radio" name="q2" value="b"/> b) Document.Write("Hello World");</div>
+							<div class="answer"><input type="radio" name="q2" value="c"/> c) echo "Hello World";</div>
+						</div>
+					</li>
+					<!--3-->
+					<li class="question">
+						<h3 class="prompt">All variables in PHP start with which symbol?</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q3" value="a"/> a) $</div>
+							<div class="answer"><input type="radio" name="q3" value="b"/> b) @</div>
+							<div class="answer"><input type="radio" name="q3" value="c"/> c) %</div>
+							<div class="answer"><input type="radio" name="q3" value="d"/> d) &amp;</div>
+						</div>
+					</li>
+					<!--4-->
+					<li class="question">
+						<h3 class="prompt">What is the correct way to add 1 to the $count variable?</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q4" value="a"/> a) $count++;</div>
+							<div class="answer"><input type="radio" name="q4" value="b"/> b) $count =+1</div>
+							<div class="answer"><input type="radio" name="q4" value="c"/> c) ++count</div>
+							<div class="answer"><input type="radio" name="q4" value="d"/> d) count++;</div>
+						</div>
+					</li>
+					<!--5-->
+					<li class="question">
+						<h3 class="prompt">How do you get information from a form that is submitted using the "post" method?</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q5" value="a"/> a) Request.Form;</div>
+							<div class="answer"><input type="radio" name="q5" value="b"/> b) $_GET[];</div>
+							<div class="answer"><input type="radio" name="q5" value="c"/> c) $_POST[];</div>
+							<div class="answer"><input type="radio" name="q5" value="d"/> d) Request.QueryString;</div>
+						</div>
+					</li>
+					<!--6-->
+					<li class="question">
+						<h3 class="prompt">When using the POST method, variables are displayed in the URL:</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q6" value="a"/> a) True</div>
+							<div class="answer"><input type="radio" name="q6" value="b"/> b) False</div>
+						</div>
+					</li>
+					<!--7-->
+					<li class="question">
+						<h3 class="prompt">In PHP you can use both single quotes (' ') and double quotes (" ") for strings:</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q7" value="a"/> a) True</div>
+							<div class="answer"><input type="radio" name="q7" value="b"/> b) False</div>
 
-        <p>2. How do you write "Hello World" in PHP?<br></p>
-        <input type="radio" name ="q2" value="a">a) "Hello World";
-        <input type="radio" name ="q2" value="b">b) Document.Write("Hello World");
-        <input type="radio" name ="q2" value="c">c) echo "Hello World";
-
-        <p>3. All variables in PHP start with which  symbol?<br></p>
-        <input type="radio" name ="q3" value="a">a) $
-        <input type="radio" name ="q3" value="b">b) @
-        <input type="radio" name ="q3" value="c">c) %
-        <input type="radio" name ="q3" value="d">d) &
-
-        <p>4. What is the correct way to add 1 to the $count variable?<br></p>
-        <input type="radio" name ="q4" value="a">a) $count++;
-        <input type="radio" name ="q4" value="b">b) $count=+1
-        <input type="radio" name ="q4" value="c">c) ++count
-        <input type="radio" name ="q4" value="d">d) count++;
-
-        <p>5. How to you get information from a form that is submitted using the "post" method?<br></p>
-        <input type="radio" name ="q5" value="a">a) Request.Form;
-        <input type="radio" name ="q5" value="b">b) $_GET[];
-        <input type="radio" name ="q5" value="c">c) $_POST[];
-        <input type="radio" name ="q5" value="d">d) Request.QueryString;
-
-        <p>6. When using POST method, variables are displayed in the URL:<br></p>
-        <input type="radio" name ="q6" value="true">True
-        <input type="radio" name ="q6" value="false">False
-
-        <p>7. In PHP you can use both single quotes ('') or double quotes ("") for strings:<br></p>
-        <input type="radio" name ="q7" value="true">True
-        <input type="radio" name ="q7" value="false">False
-
-        <p>8. What is the correct way to create a funtion in PHP?<br></p>
-        <input type="radio" name ="q8" value="a">a) create myFunction()
-        <input type="radio" name ="q8" value="b">b) new_function myFunction()
-        <input type="radio" name ="q8" value="c">c) function myFunction()
-
-        <p>9. What is the correct way to connect to a MySQL database?<br></p>
-        <input type="radio" name ="q9" value="a">a) mysql_connect("localhost");
-        <input type="radio" name ="q9" value="b">b) mysql_query("localhost");
-        <input type="radio" name ="q9" value="c">c) connect_mysql("localhost");
-        <input type="radio" name ="q9" value="d">d) mysql_open("localhost");
-
-        <p>10. The following HTML code will direct form information and control to what file?<br>&lt;form action = "P4.php" method= "post"&gt;</p>
-            <input type ="text" name = "q10"
-            <h6>(Note: case-sensitive)</h6>
-            <br> 
-            <hr>
-            <center><br><input type = "submit" submit = "submit" value = "Submit Answers"></center>
-    </form>
+						</div>
+					</li>
+					<!--8-->
+					<li class="question">
+						<h3 class="prompt">What is the correct way to create a function in PHP?</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q8" value="a"/> a) create myFunction()</div>
+							<div class="answer"><input type="radio" name="q8" value="b"/> b) new_function myFunction()</div>
+							<div class="answer"><input type="radio" name="q8" value="c"/> c) function myFunction()</div>
+						</div>
+					</li>
+					<!--9-->
+					<li class="question">
+						<h3 class="prompt">What is the correct way to connect to a MySQL database?</h3>
+						<div class="answers">
+							<div class="answer"><input type="radio" name="q9" value="a"/> a) mysql_connect("localhost");</div>
+							<div class="answer"><input type="radio" name="q9" value="b"/> b) mysql_query("localhost");</div>
+							<div class="answer"><input type="radio" name="q9" value="c"/> c) connect_mysql("localhost");</div>
+							<div class="answer"><input type="radio" name="q9" value="d"/> d) mysql_open("localhost");</div>
+						</div>
+					</li>
+					<!--10-->
+					<li class="question">
+						<h3 class="prompt">The following HTML code will direct form information and control to what file?<br><br><code>&lt;form action="P4.php" method="post"&gt;</code></h3>
+						<div class="answers">
+							<div class="answer"><input type="text" name="q10" id="q10" placeholder="Your response here..."/><br><label for="q10"/>Response (<b>Note: case-sensitive</b>)</label></div>
+						</div>
+					</li>
+				</ol>
+				<input class="submit" type="submit" value="Submit Answers"/>
+			</form>
+		</div>
+	</div>
 </body>
-</html> 
+</html>
